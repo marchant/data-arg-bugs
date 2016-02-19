@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script type="text/montage-serialization">
+    {
+        "owner": {
+            "properties": {
+                "element": {"#": "owner"}
+            }
+        },
+        "foo": {
+            "prototype": "substitution-args/ui/foo.reel",
+            "properties": {
+                "element": {"#": "foo"}
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <div data-montage-id="owner" class="Main">
+        <h1>Data-Arg Class Example</h1>
+        <div data-montage-id="foo">
+            <!-- It would be helpful at times if we could keep these classes -->
+            <div data-arg="foo">foo</div>
+            <div data-arg="bar">bar</div>
+        </div>
+    </div>
+</body>
+</html>

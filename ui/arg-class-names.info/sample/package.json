@@ -1,0 +1,15 @@
+{
+    "name": "substitution-sample",
+    "version": "0.1.0",
+    "dependencies": {
+        "montage": "*",
+        "substitution-args": "*"
+
+    },
+    "mappings": {
+        "montage": "../../../../node_modules/montage",
+        "substitution-args": "../../../"
+    }
+}
+
+

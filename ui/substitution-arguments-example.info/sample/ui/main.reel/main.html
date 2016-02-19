@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script type="text/montage-serialization">
+    {
+        "owner": {
+            "properties": {
+                "element": {"#": "owner"}
+            }
+        },
+        "sectionSelector": {
+            "prototype": "substitution-args/ui/section-selector.reel",
+            "properties": {
+                "element": {"#": "sectionSelector"},
+                "sections": [
+                    {
+                        "identifier": "foo",
+                        "label": "Foo"
+                    },
+                    {
+                        "identifier": "bar",
+                        "label": "Bar"
+                    }
+                ]
+            },
+            "bindings": {
+                "currentSection": {"<->": "@owner.currentSection"}
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <div data-montage-id="owner" class="Main">
+        <h1>Substitution Arguments Example</h1>
+        <!-- these are components for the substitution component inside of section-selector.reel It seems that the data-->
+        <div data-montage-id="sectionSelector">
+            <div data-arg="foo">foo</div>
+            <div data-arg="bar">bar</div>
+        </div>
+    </div>
+</body>
+</html>

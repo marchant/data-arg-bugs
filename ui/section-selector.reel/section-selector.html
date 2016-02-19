@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="section-selector.css">
+    <script type="text/montage-serialization">
+    {
+        "owner": {
+            "properties": {
+                "element": {"#": "owner"}
+            }
+        },
+        "repetition": {
+            "prototype": "montage/ui/repetition.reel",
+            "properties": {
+                "element": {"#": "repetition"},
+                "isSelectionEnabled": true
+            },
+            "bindings": {
+                "content": {"<-": "@owner.sections"}
+            }
+        },
+        "option": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "option"}
+            },
+            "bindings": {
+                "iteration": {"<-": "@repetition:iteration"},
+                "iteration.selected": {"<->": "@owner.currentSection == iteration.object.identifier"},
+                "value": {"<-": "iteration.object.label"}
+            }
+        },
+        "substitution": {
+            "prototype": "montage/ui/substitution.reel",
+            "properties": {
+                "element": {"#": "substitution"}
+            },
+            "bindings": {
+                "switchValue": {"<-": "@owner.currentSection"}
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <div data-montage-id="owner" class="SectionSelector">
+        <div data-montage-id="repetition" class="repetition">
+            <div data-montage-id="option" class="option"></div>
+        </div>
+        <div data-montage-id="substitution">
+            <div data-param="*"></div>
+        </div>
+    </div>
+</body>
+</html>
